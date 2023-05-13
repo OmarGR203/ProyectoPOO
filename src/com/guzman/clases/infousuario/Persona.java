@@ -4,7 +4,6 @@ public class Persona {
    String nombre, apellidos, email, password;
 
 
-
    public Persona() {
    }
 
@@ -32,7 +31,7 @@ public class Persona {
       this.apellidos = apellidos;
    }
 
-   public String getEmail() {
+   public String getEmail(String s) {
       return email;
    }
 
