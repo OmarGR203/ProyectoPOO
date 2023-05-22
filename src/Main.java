@@ -1,28 +1,47 @@
-import com.guzman.clases.operaciones.Activacion;
+import com.guzman.clases.operaciones.Preactivacion;
 import com.guzman.clases.operaciones.RecargaSaldo;
 
-import javax.swing.plaf.PanelUI;
-import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class Main {
 
-    private static Activacion activacion = new Activacion();
-    private static RecargaSaldo recagaSaldo = new RecargaSaldo();
 
-    private static IniciarSesion iniciarSesion = new IniciarSesion();
-
-
+    // Persona persona = new Persona(){
+    //  String persona.
+    //}
 
     public static void main(String[] args) {
-     iniciarSesion.toString();
+        Scanner obj = new Scanner(System.in);
+        int eleccion;
+        System.out.println("Bienvenido al sistema de activacion y recargas");
+        System.out.println("1.Activa tu línea, 2.Recarga Saldo, 3.Preactivar");
 
+        eleccion=obj.nextInt();
+        switch (eleccion) {
+            case 1 -> {
+                System.out.println("Preactiva tu línea");
+                Preactivacion.preactivacion();
+            }
+            case 2 ->{
+                System.out.println("Recarga saldo");
+                RecargaSaldo.Recarga();
+            }
+            case 3 ->{
+                System.out.println("");
+            }
+
+        }
+
+       // IniciarSesion.inicioSesion();
+       // Preactivacion.preactivacion();
 
     }
 
 
+}
 
-    public static void activarSIM() {
+
+  /*  public static void activarSIM() {
 
         if (recagaSaldo.getMonto() == 50) {
             activacion.setActivado(true);
@@ -37,4 +56,4 @@ public class Main {
             System.out.println("LA SIM NO SE HA ACTIVADO. ");
         }
     }
-}
+}*/

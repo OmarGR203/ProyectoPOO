@@ -1,4 +1,4 @@
 package com.guzman.clases.consultas;
 
-public class ConsultaRecargas {
+public class Consultas {
 }

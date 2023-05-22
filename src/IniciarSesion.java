@@ -1,35 +1,26 @@
-import com.guzman.clases.infousuario.Usuario;
-
-import javax.swing.*;
 import java.util.Scanner;
 
 public class IniciarSesion {
-
-    public static void iniciarSesion (){
-        Scanner scanner = new Scanner(System.in);
-        String us="oguzma20@gmial.com", pass="123C56";
-        String usuario, password;
-        System.out.println("INGRESE SU USUARIO");
-        usuario = scanner.nextLine();
-        System.out.println("INGRESE SU CONTRASEÑA");
-        password = scanner.nextLine();
-
-        int intentos=0;
-        if (us.equals(usuario) && pass.equals(password)){
-            System.out.println("BIENVENIDO A SU PORTAL DE ACTIVACIONES");
-        }
-        while (pass.equals(password)==false && intentos<3)
-            System.out.println("Hay un error en sus datos, intente nuevamente");
-        System.out.println("INGRESE SU USUARIO");
-        usuario = scanner.nextLine();
-        System.out.println("INGRESE SU CONTRASEÑA");
-        password = scanner.nextLine();
-        intentos++;
-
-        if(intentos==3){
-            System.out.println("HA REBASADO EL NÚMERO DE INTENTOS PERMITIDOS");
-        }
-
-    }
+    public static void inicioSesion() {
+        System.out.println("Acceso a sistema");
+        Scanner datos = new Scanner(System.in);
+        int intento, contraseña = 2060, acceso = 0;
+        do {
+            System.out.println("Ingresa la contraseña");
+            intento = datos.nextInt();
+            if (intento == contraseña) {
+                System.out.println("Contraseña correcta");
+                System.out.println("Bienvenido");
+                acceso = 3;
+            } else {
+                System.out.println("Contraseña incorrecta");
+                acceso = acceso + 1;
+                if (acceso == 3) {
+                    System.out.println("¡Accseso restringido!");
+                    System.out.println("Supero el limite de intentos");
+                }
+            }
+        } while (acceso < 3 );
+}
 
 }
